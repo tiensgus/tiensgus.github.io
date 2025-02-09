@@ -308,17 +308,7 @@ rateInEl.addEventListener('change', updateOutputs);
 </script>
 
 <script>//--Chat GPT---------------------------------------------
-var apiKey;
-fetch('/api/config')
-    .then(response => response.json())
-    .then(data => {
-        apiKey = data.apiKey;
-        //document.getElementById('api-key').innerText = apiKey;
-    })
-    .catch(error => console.error('Lỗi:', error));
-</script>
-<script>
-  
+  //apiKey da co trong index.js
   async function sendMessage(transcript) {
     let userInput = transcript;
     //alert(userInput);
@@ -367,4 +357,3 @@ function reSpeak(){
 <script src="index.js"></script> 
 </body>
 </html>
-
