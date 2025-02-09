@@ -308,22 +308,25 @@ rateInEl.addEventListener('change', updateOutputs);
 </script>
 
 <script>//--Chat GPT---------------------------------------------
-
-  //  <input type="text" id="userInput" placeholder="Nhập tin nhắn của bạn...">
-  //<button onclick="sendMessage()">Gửi</button>
-  //const apiKey = "YOUR_OPENAI_API_KEY"; // Thay bằng API Key của bạn
-  const apiKey = "";
+var apiKey;
+fetch('/api/config')
+    .then(response => response.json())
+    .then(data => {
+        apiKey = data.apiKey;
+        //document.getElementById('api-key').innerText = apiKey;
+    })
+    .catch(error => console.error('Lỗi:', error));
+</script>
+<script>
   
   async function sendMessage(transcript) {
     let userInput = transcript;
     //alert(userInput);
     if (!userInput) return;
-  
     //let chatbox = document.getElementById("chatbox");
     //chatbox.innerHTML += `<p><strong>Bạn:</strong> ${userInput}</p>`;
   
     // Gửi tin nhắn đến OpenAI API
-    
     let response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -364,3 +367,4 @@ function reSpeak(){
 <script src="index.js"></script> 
 </body>
 </html>
+
