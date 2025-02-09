@@ -1,3 +1,4 @@
+//--menu unit
 let listUrlYt = [
     "",    
     "https://youtu.be/Xj8Amv0Z52w?si=N7RCH2QWFryI2os8",
@@ -250,4 +251,76 @@ let listUrlYt = [
         }
     }
     GFG_Fun();
-    
+
+//-apiKey--chat    
+var apiKey="";
+document.addEventListener("DOMContentLoaded", async () => {
+    try {
+        const response = await fetch("/api/env");
+        const data = await response.json();
+        //document.getElementById("env-value").textContent = data.envValue;
+        apiKey =  data.envValue;
+    } catch (error) {
+        console.error("Lỗi khi tải biến môi trường:", error);
+        //document.getElementById("env-value").textContent = "Lỗi khi tải dữ liệu.";
+    }
+});
+//--Tien them--cua chatgpt
+ 
+async function sendMessage(transcript) {
+    let userInput = transcript;
+    //alert(userInput);
+    if (!userInput) return;
+    //let chatbox = document.getElementById("chatbox");
+    //chatbox.innerHTML += `<p><strong>Bạn:</strong> ${userInput}</p>`;
+  
+    // Gửi tin nhắn đến OpenAI API
+    let response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages: [{ role: "user", content: userInput }]
+      })
+    });
+  
+    let data = await response.json();
+    reply = data.choices[0].message.content;
+    resultsdich.textContent = reply;
+
+    function speakText(text) {
+      let utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      speechSynthesis.speak(utterance);
+    }
+    speakText(reply);
+  
+    //chatbox.innerHTML += `<p><strong>ChatGPT:</strong> ${reply}</p>`;
+    //document.getElementById("userInput").value = "";
+    //chatbox.scrollTop = chatbox.scrollHeight;
+}
+
+function reSpeak(){
+  let text = resultsdich.textContent;
+  let utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'en-US';
+  speechSynthesis.speak(utterance);
+}
+
+function nhap_apikey(){
+  
+  var reasonForLeaving = prompt("Enter your apiKey for chatGPT:");
+            if(reasonForLeaving === null  || reasonForLeaving == "") {
+                alert('Invalid!');
+                return false;
+            }
+            else if (reasonForLeaving != null) {
+                document.getElementById("setReasonForLeaving").value = reasonForLeaving;
+                apiKey = reasonForLeaving;
+                alert(reasonForLeaving);
+                return true;
+            }
+}
