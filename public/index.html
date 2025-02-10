@@ -29,7 +29,7 @@
         </iframe>
     </div><br>
 <div class="wrapper">
-  <div  id="infoB" translate="no">Practice to speak English with chatGPT</div>
+  <div  id="infoB" translate="no">Practice to speak English with chat<span style="color:yellow;" onclick="anhien_vanban()">GPT</span></div>
 </div>
 <hr>
 
@@ -108,6 +108,7 @@
 //------------------------------------ CHO CHAT GPT----------------------------------------------------------------
 //--Cac bien toan cuc--
 var text='';
+var demah=0;
 var messages = {//kieu dic
     "start": {
       msg: 'Click on the microphone icon and begin speaking.',
@@ -352,6 +353,20 @@ function reSpeak(){
   speechSynthesis.speak(utterance);
 }
 
+function anhien_vanban(){
+  demah =demah+1;
+  if (demah%2===1){
+    document.getElementById("results").style.clipPath = "inset(100%)";
+    document.getElementById("resultdich").style.clipPath = "inset(100%)";
+
+  }else{
+    document.getElementById("results").style.clipPath = "inset(0%)";
+    document.getElementById("resultdich").style.clipPath = "inset(0%)";
+    
+    
+  }
+  alert('an hien');
+}
 </script>
   
 <script src="index.js"></script> 
