@@ -1,12 +1,12 @@
 
 let elmts = ['1.Tìm cnt hcn có S max', 
-    '2.Tìm n cnt hcn có S max sxếp theo S giảm', 
+    '2.Tìm n cnt hcn có S max sxếp th S giảm', 
     '3.Tìm cnt hình vuông có nền đen nhất', 
-    '4.Tìm n cnt hv có nền đen nhất và sắp xếp giảm',
+    '4.Tìm n cnt hv có nền đen nhất sxếp giảm',
     '5.Tìm bubble đen nhất', 
     '6.Tìm bubble lạt nhất', 
-    '7.Sắp xếp các bubble theo x tăng và y tăng', 
-    '8.Sxếp bubs ra 4 khối, 30 dòng/khối, 4 bub/dòng',
+    '7.Sắp xếp các bubble theo x,y', 
+    '8.Sxếp bubs ra 4k, 30d/k, 4b/d',
     '9.Nắn lại ảnh PTN'];
 
 let selectb1 = document.getElementById('chonPhieuTn');    
