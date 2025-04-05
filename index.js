@@ -1,13 +1,13 @@
 
-let elmts = ['1.Tìm cnt hcn có S max', 
-    '2.Tìm n cnt hcn có S max sxếp th S giảm', 
-    '3.Tìm cnt hình vuông có nền đen nhất', 
-    '4.Tìm n cnt hv có nền đen nhất sxếp giảm',
-    '5.Tìm bubble đen nhất', 
-    '6.Tìm bubble lạt nhất', 
-    '7.Sắp xếp các bubble theo x,y', 
-    '8.Sxếp bubs ra 4k, 30d/k, 4b/d',
-    '9.Nắn lại ảnh PTN'];
+let elmts = ['Tìm cnt hcn có S max', 
+    'Tìm n cnt hcn S max sx S giảm', 
+    'Tìm cnt hv có nền đen nhất', 
+    'Tìm n cnt hv đen nhất sxếp giảm',
+    'Tìm bubble đen nhất', 
+    'Tìm bubble lạt nhất', 
+    'Sắp xếp các bubble theo x,y', 
+    'Sxếp bubs ra 4k, 30d/k, 4b/d',
+    'Nắn lại ảnh PTN'];
 
 let selectb1 = document.getElementById('chonPhieuTn');    
 // ham nay dua lít tren vao menu
