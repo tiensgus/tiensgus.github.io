@@ -2,14 +2,12 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ghi âm đơn giản (iPhone OK)</title>
+  <title>Ghi âm Web đơn giản</title>
 </head>
 <body>
-  <h2>🎤 Ghi âm thử (Tương thích iPhone)</h2>
+  <h2>🎤 Ghi âm thử</h2>
   <button id="startBtn">🔴 Bắt đầu ghi</button>
   <button id="stopBtn" disabled>⏹ Dừng ghi</button>
-  <p><strong>Phát lại:</strong></p>
   <audio id="audioPlayback" controls></audio>
 
 <script>
@@ -18,6 +16,7 @@ let recordedChunks = [];
 
 document.getElementById("startBtn").onclick = async () => {
   recordedChunks = [];
+
   try {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     mediaRecorder = new MediaRecorder(stream);
@@ -29,7 +28,9 @@ document.getElementById("startBtn").onclick = async () => {
     mediaRecorder.onstop = () => {
       const blob = new Blob(recordedChunks, { type: 'audio/webm' });
       const audioURL = URL.createObjectURL(blob);
-      document.getElementById("audioPlayback").src = audioURL;
+      const audio = document.getElementById("audioPlayback");
+      audio.src = audioURL;
+      audio.load(); // đảm bảo audio load lại
     };
 
     mediaRecorder.start();
@@ -41,7 +42,7 @@ document.getElementById("startBtn").onclick = async () => {
 };
 
 document.getElementById("stopBtn").onclick = () => {
-  if (mediaRecorder && mediaRecorder.state !== "inactive") {
+  if (mediaRecorder && mediaRecorder.state === "recording") {
     mediaRecorder.stop();
     document.getElementById("startBtn").disabled = false;
     document.getElementById("stopBtn").disabled = true;
