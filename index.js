@@ -354,26 +354,6 @@ let listUrlYt = [
   
       }  
     
-    //function speakTextbo(text) {
-      // stop any speaking in progress
-    //  window.speechSynthesis.cancel();
-    
-      // create new utterance with all the properties
-      //const text = textEl.value;
-    //  utterance = new SpeechSynthesisUtterance(text);
-      //utterance.voice = window.speechSynthesis.getVoices().find(voice => voice.voiceURI === voiceInEl.value);
-     // utterance.lang = langNoi;
-     // utterance.pitch = pitchInEl.value;
-     // utterance.rate = rateInEl.value;
-      //utterance.volume = volumeInEl.value;
-     // utterance.volume = 1;
-     // utterance.addEventListener('start', handleStart);
-     // utterance.addEventListener('end', handleEnd);
-  
-  
-      // speak that utterance
-     // window.speechSynthesis.speak(utterance);
-    //}
     speakText(resultsdichEl.innerText);
   }
   
@@ -436,29 +416,7 @@ let listUrlYt = [
           speechSynthesis.onvoiceschanged = setVoiceAndSpeak;
       }
   
-      //speakText(text);
-      //utterance = new SpeechSynthesisUtterance(text);
-      // create new utterance with all the properties
-      //utterance.voice = window.speechSynthesis.getVoices().find(voice => voice.voiceURI === voiceInEl.value);
-      //utterance.lang = langNoi;
-      //utterance.pitch = pitchInEl.value;
-      //utterance.rate = rateInEl.value;
-      //utterance.volume = volumeInEl.value;
-      //utterance.volume = 1;
-  
-      //utterance.addEventListener('start', handleStart);
-      //utterance.addEventListener('end', handleEnd2);
-      //utterance.addEventListener('boundary', handleBoundary);
-  
-  
-  
-      // speak that utterance
-      //window.speechSynthesis.speak(utterance);
   }
-  
-  
-  
-  
   //--Cac bien toan cuc--
   //var text='';
   var demah=0;
@@ -608,11 +566,6 @@ let listUrlYt = [
       final_spanEl.textContent = linebreak(final_transcript);
       interim_spanEl.textContent = linebreak(interim_transcript);
   
-      //sendMessage(final_transcript);
-  
-    //final_transcript la global nen no van ton tai ca cac thay doi, den khi ta click nghe thi moi dich
-    //resultsdichEl.innerHTML=translate(final_transcript);     
-    //translate(final_transcript);     
   };
   
   }
@@ -659,9 +612,6 @@ let listUrlYt = [
       recognition.lang = langNoi;
   
     }
-  
-    //recognition.lang = langNoi;
-    //console.log(recognition.lang);
   
     ignore_onend = false;
     final_spanEl.textContent = '';
@@ -798,18 +748,6 @@ let listUrlYt = [
     let textNoi = resultsdichViqEl.innerText.trim() + " . " + resultsdichViaEl.innerText.trim();
     if (textNoi.trim()==="."){return;}
     speakText(textNoi);
-    //const speech = new SpeechSynthesisUtterance();
-    //if (langNoi==='en-US'){
-    //  speech.lang = "vi-VN"; // Đọc tiếng Vi
-    //}else{
-    //  speech.lang = "en-US"; // Đọc tiếng Vi
-  
-    //}  
-    //speech.text = textNoi;
-    //speech.rate = 1;
-    //speech.pitch = 1;
-    //speech.volume = 2;
-    //speechSynthesis.speak(speech);
   }
   //--------------------
   function stopVideo() {
@@ -1315,17 +1253,4 @@ let listUrlYt = [
     }
   }
   //-----------
-  //function speakTextTd(textTd,langNoi){ 
-  //  if (window.speechSynthesis.speaking) {window.speechSynthesis.cancel();
-  //    return;
-  //  }
-  //  let textNoi = textTd;
-  //  const speech = new SpeechSynthesisUtterance();
-  //  speech.lang = langNoi;
-  //  speech.text = textNoi;
-  //  speech.rate = 1;
-  //  speech.pitch = 1;
-  //  speech.volume = 2;
-  //  speechSynthesis.speak(speech);
-  //}
-    
+  
