@@ -1258,8 +1258,8 @@ let listUrlYt = [
       '<p style="text-align: left;  color:grey;">- <span style="color:darkblue;">GPT sẽ hồi đáp bằng âm thanh, văn bản bằng tiếng Anh hoặc tiếng việt qua những nút bấm.</span></p>'+
       '<p style="text-align: left;  color:grey;">- <span style="color:darkblue;">Khi click vào một từ hồi đáp, GPT sẽ cung cấp các thông tin về ngữ nghĩa của từ đó.</span></p>'+
   
-      '<p style="text-align: left;  color:grey;">✅ Bạn cũng có thể sử dụng các bài học tiếng Anh dạng Youtube của VOA trong menu bên dưới để học. '+'</p>'+
-      '<p style="text-align: left;  color:grey;">Khi xem các bài youtube bạn có thể nhấp mic để GPT nghe một phần nào đó rồi phản hồi. Sau đó nhấp nút dịch tiếng Việt để nghe hoặc xem văn bản.'+' </p>'+
+      '<p style="text-align: left;  color:grey;">✅ Bạn cũng có thể sử dụng các bài học tiếng Anh dạng Youtube của VOA trong menu phía dưới để học. '+'</p>'+
+      '<p style="text-align: left;  color:grey;">Khi xem các bài youtube, nếu có phần không hiểu và đang chạy trên máy tính, bạn có thể nhấp mic để GPT nghe phần đó rồi phản hồi. Sau đó nhấp nút dịch tiếng Việt để nghe hoặc xem văn bản.'+' </p>'+
   
       '<p style="text-align: left;  color:darkblue;">✅ Và còn rất nhiều thứ chúng ta sẽ khám phá dần với chatGPT. '+'</p>',
     confirmButtonText: "OK", 
