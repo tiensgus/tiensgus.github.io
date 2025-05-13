@@ -278,7 +278,7 @@ border-radius: 4px;
     </div>
 
     <div class="buttons4">
-        <button id="buttonH"><select id="select_voa" onchange="chonUnitvoa()" style="background-color: transparent; border: none; color:rgb(105, 27, 27);text-align: center;font-weight:bolder;"></select></button>
+        <button id="buttonH"><select id="select_voa" onchange="chonUnitvoa()" style="background-color: transparent; border: none; color:rgb(105, 27, 27);font-weight:bolder;"></select></button>
     </div>
     <br><br><br><br>
 </div>
@@ -292,7 +292,7 @@ const developingpdfEl = document.getElementById("developingpdf");
 const expandingpdfEl = document.getElementById("expandingpdf");
 var hiden=0;
 let tducso=0;
-
+var level = 1;
 //-- Cho NEN video ifram youtube-----------------------
 //let id = "";
 var videoIDcurrent;
@@ -358,12 +358,45 @@ function chonUnit(){ //chon unit khac va update iframe
 //document.getElementById("basicpdf").click();
 function hthipdf1(){
     iframe_ytEl.src = "https://online.flipbuilder.com/sdtta/fpva/mobile/index.html";
+    level = 1;
+    updateMenuT(level);
+    updateMenuV(level);
+    document.getElementById("developingpdf").disabled = false;
+    document.getElementById("expandingpdf").disabled = false;
+    document.getElementById("wordLength").disabled = true;
+
+    document.getElementById("wordLength").style.background = "transparent";
+    document.getElementById("expandingpdf").style.background = "darkgreen";
+    document.getElementById("developingpdf").style.background = "darkgreen";
+
 }
 function hthipdf2(){
     iframe_ytEl.src = "https://online.flipbuilder.com/sdtta/kjol";
+    level = 2;
+    updateMenuT(level);
+    updateMenuV(level);
+    document.getElementById("wordLength").disabled = false;
+    document.getElementById("expandingpdf").disabled = false;
+    document.getElementById("developingpdf").disabled = true;
+
+    document.getElementById("developingpdf").style.background = "transparent";
+    document.getElementById("wordLength").style.background = "darkgreen";
+    document.getElementById("expandingpdf").style.background = "darkgreen";
+
 }
 function hthipdf3(){
     iframe_ytEl.src = "https://online.flipbuilder.com/sdtta/vlyh";
+    level = 3;
+    updateMenuT(level);
+    updateMenuV(level);
+    document.getElementById("wordLength").disabled = false;
+    document.getElementById("developingpdf").disabled = false;
+    document.getElementById("expandingpdf").disabled = true;
+
+    document.getElementById("expandingpdf").style.background = "transparent";
+    document.getElementById("developingpdf").style.background = "darkgreen";
+    document.getElementById("wordLength").style.background = "darkgreen";
+
 }
 //let tducso=0;
 function tdyt(){
@@ -399,10 +432,8 @@ chonQA_buttonEl.addEventListener('click', function(){
         iframe_ytEl.src = "icons/theduc.mp4";
         chonQA_buttonEl.innerHTML='The duc yhct 30p';
         readTd30();
-
     } else if (tducso%5 === 2) {
         //iframe_ytEl.src = "icons/theducnu.mp4";
-        //videoIDcurrent="pdm2VIOmXMc";
         iframe_ytEl.src="https://youtube.com/embed/pdm2VIOmXMc"; 
         chonQA_buttonEl.innerHTML='The duc yhct 27p nu';
     } else if (tducso%5 === 3) {
@@ -483,10 +514,14 @@ var videoIDcurrentvoa;
     videoIDcurrentvoa = lIdTitle_voa[select_voa.selectedIndex].split("|")[0];
     iframe_ytEl.src="https://youtube.com/embed/" + videoIDcurrentvoa;
   }
+//link yt basic  DKF  https://youtube.com/playlist?list=PLhow8vRduAKyaJ8_5-jBR4PV3is3tSpYz&si=LfPbgHbHBLY5eMfN
+//link yt develop DKF https://www.youtube.com/playlist?list=PLhow8vRduAKwxvROzq8ZMj1fUqsXuFN2E
+//link yt expand  DKF https://youtube.com/playlist?list=PLhow8vRduAKwIIZ0yzh5kl1C1DxzPxxYZ&si=rxpoDMbkKBF_8_99
+
 </script>  
 
 <script src="index.js"></script> 
-<script src="indexbt.js"></script> 
+ 
 <script src="indexvoa.js"></script> 
 
 </body>

@@ -41,7 +41,7 @@ let lIdTitle_voa = [
 "vAoVf2rIJFc|Lesson 39: Where are the dinosaurs?",
 "P5v-ZDjGQ5o|Lesson 40: What job do you want in the future?",
 
-"M8kGGThGdJE|Introducing Let's Learn English",
+"M8kGGThGdJE|Introducing Let's Learn English I",
 "WR9_nsLyaEY|Lesson 1 - Welcome!",
 "1-U7o9xjWQc|Lesson 2: Hello, I'm Anna!",
 "IEA9LMy-N3M|Lesson 3: I'm Here!",
@@ -118,7 +118,7 @@ let lIdTitle_voa = [
 "PwDJILthcjU|Lesson 22 Pronunciation Practice",
 "m2VnyoZIlM4|Lesson 52 Pronunciation Practice",
 "vJPvOYb1K10|Lesson 52: Taking Chances",
-"mnmGvdVcQ-0|Introducing Let's Learn English Level 2",
+"mnmGvdVcQ-0|Introducing Let's Learn English Level II",
 "a7X5ftOnp74|Lesson 3: He Said - She Said",
 "OR0d7fb_Ls0|Lesson 4: Run Away With the Circus!",
 "xokbf-np33Q|Lesson 2: The Interview",
@@ -178,4 +178,36 @@ function duaVaoMenuSelect() {
     }
 }
 duaVaoMenuSelect();
+//---------------------------
+function  updateMenuV(levelv){
+    let select_voa = document.getElementById("select_voa");
+    let nstart,nend;
+    if (levelv===3){
+        nstart=118; nend=select_voa.options.length;
+    } else if (levelv===2) {
+        nstart=41; nend=118;
+    } else{
+        nstart=0; nend=41;
+    }
+    //console.log(levelv, nstart, nend);    
+    for (let i = 0; i < select_voa.options.length; i++) {
+        select_voa.options[i].hidden = !(i>=nstart && i < nend); // che di nhung i khong trong khoang nay
+    }
+}
 
+function  updateMenuT(levelt){
+   // console.log(levelt);
+   let select_unit_chon = document.getElementById("unit_chon");
+    let nstart,nend;
+    if (level===3){
+        nstart=49; nend=unit_chon.options.length;
+    } else if (levelt===2) {
+        nstart=25; nend=49;
+    } else{
+        nstart=1; nend=25;
+    }
+    console.log(levelt, nstart, nend);    
+    for (let i = 0; i < select_unit_chon.options.length; i++) {
+        select_unit_chon.options[i].hidden = !(i>=nstart && i < nend); // che di nhung i khong trong khoang nay
+    }
+}
