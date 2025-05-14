@@ -278,7 +278,7 @@ border-radius: 4px;
     </div>
 
     <div class="buttons4">
-        <button id="buttonH"><select id="select_voa" onchange="chonUnitvoa()" style="background-color: transparent; border: none; color:rgb(105, 27, 27);font-weight:bolder;"></select></button>
+        <button id="buttonH"><select id="select_voa" onchange="chonUnitVoa()" style="background-color: transparent; border: none; color:rgb(105, 27, 27);font-weight:bolder;"></select></button>
     </div>
     <br><br><br><br>
 </div>
@@ -295,7 +295,7 @@ let tducso=0;
 var level = 1;
 //-- Cho NEN video ifram youtube-----------------------
 //let id = "";
-var videoIDcurrent;
+var videoIDcurrent, videoIDcurrentVoa, listx, listy;
 const selectb = document.getElementById("unit_chon");
 const selectvoa = document.getElementById("select_voa");
     //nen la id luu last
@@ -348,9 +348,10 @@ function chonUnit(){ //chon unit khac va update iframe
             return;
         }
         
-        videoIDcurrent = list_id[selectb.selectedIndex];
+        //videoIDcurrent = list_id[selectb.selectedIndex];
+        videoIDcurrent = listy[selectb.selectedIndex].split("|")[0];
         //alert(videoIDcurrent); src embed co dang do yt quy dinh : "https://youtube.com/embed/"+id_yt
-        iframe_ytEl.src="https://youtube.com/embed/" + videoIDcurrent + "?enablejsapi=1";
+        iframe_ytEl.src="https://youtube.com/embed/" + videoIDcurrent ;
 
     }
 }
@@ -359,7 +360,7 @@ function chonUnit(){ //chon unit khac va update iframe
 //document.getElementById("basicpdf").click();
 function hthipdf1(){
     iframe_ytEl.src = "https://online.flipbuilder.com/sdtta/fpva/mobile/index.html";
-    //updateMenuT(1);
+    updateMenuT(0);
     updateMenuV(0);
     document.getElementById("developingpdf").disabled = false;
     document.getElementById("expandingpdf").disabled = false;
@@ -372,7 +373,7 @@ function hthipdf1(){
 }
 function hthipdf2(){
     iframe_ytEl.src = "https://online.flipbuilder.com/sdtta/kjol";
-    //updateMenuT(2);
+    updateMenuT(1);
     updateMenuV(1);
     document.getElementById("wordLength").disabled = false;
     document.getElementById("expandingpdf").disabled = false;
@@ -385,7 +386,7 @@ function hthipdf2(){
 }
 function hthipdf3(){
     iframe_ytEl.src = "https://online.flipbuilder.com/sdtta/vlyh";
-    //updateMenuT(3);
+    updateMenuT(2);
     updateMenuV(2);
     document.getElementById("wordLength").disabled = false;
     document.getElementById("developingpdf").disabled = false;
@@ -455,10 +456,6 @@ chonQA_buttonEl.addEventListener('click', function(){
 document.getElementById("iframe_yt").style.width="340px";
 document.getElementById("iframe_yt").style.height="255px";
 
-function rutTextTuAnh(){
-    iframe_ytEl.src = "https://tiengs.github.io/";
-}
-//doc bai theduc
 //them 3-5-25
 function detectLanguage(text) {
     // Nếu thấy nhiều ký tự có dấu tiếng Việt thì chọn tiếng Việt
@@ -520,6 +517,7 @@ var videoIDcurrentvoa;
 
 <script src="index.js"></script> 
 <script src="indexvoa.js"></script> 
+<script src="indexbt.js"></script> 
 
 </body>
 </html>

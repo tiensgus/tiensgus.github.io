@@ -175,8 +175,6 @@ function updateMenuV(levelx) {
     for (i = selectvoa.options.length-1; i >= 0;i--) {
         selectvoa.remove(i);
     }
-
-    let listx;
     if (levelx===0){
         listx=lIdTitle_voaAn;
     }else if(levelx===1){
@@ -192,4 +190,11 @@ function updateMenuV(levelx) {
         selectvoa.appendChild(el);
     }
 }
-updateMenuV(0);
+hthipdf1();
+
+function chonUnitVoa(){
+    videoIDcurrentVoa = listx[selectvoa.selectedIndex].split("|")[0];
+    iframe_ytEl.src="https://youtube.com/embed/" + videoIDcurrentVoa;
+
+}
+//---------------------------
