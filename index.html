@@ -297,6 +297,7 @@ var level = 1;
 //let id = "";
 var videoIDcurrent;
 const selectb = document.getElementById("unit_chon");
+const selectvoa = document.getElementById("select_voa");
     //nen la id luu last
 //document.getElementById("iframe_yt").src="https://youtube.com/embed/" + videoIDcurrent;
 //cai nay default Basic PDF
@@ -359,7 +360,7 @@ function chonUnit(){ //chon unit khac va update iframe
 function hthipdf1(){
     iframe_ytEl.src = "https://online.flipbuilder.com/sdtta/fpva/mobile/index.html";
     //updateMenuT(1);
-    updateMenuV(1);
+    updateMenuV(0);
     document.getElementById("developingpdf").disabled = false;
     document.getElementById("expandingpdf").disabled = false;
     document.getElementById("wordLength").disabled = true;
@@ -372,7 +373,7 @@ function hthipdf1(){
 function hthipdf2(){
     iframe_ytEl.src = "https://online.flipbuilder.com/sdtta/kjol";
     //updateMenuT(2);
-    updateMenuV(2);
+    updateMenuV(1);
     document.getElementById("wordLength").disabled = false;
     document.getElementById("expandingpdf").disabled = false;
     document.getElementById("developingpdf").disabled = true;
@@ -385,7 +386,7 @@ function hthipdf2(){
 function hthipdf3(){
     iframe_ytEl.src = "https://online.flipbuilder.com/sdtta/vlyh";
     //updateMenuT(3);
-    updateMenuV(3);
+    updateMenuV(2);
     document.getElementById("wordLength").disabled = false;
     document.getElementById("developingpdf").disabled = false;
     document.getElementById("expandingpdf").disabled = true;

@@ -1,4 +1,4 @@
-let lIdTitle_voa = [
+let lIdTitle_voaAn = [
 "Z2iXr8On3LI|Let's Learn English with Anna on VOA!",
 "iQ06VFmBGC4|Lesson 1: Who Are You",
 "K9MxWzoIH_M|Lesson 2: What Do You Like to Eat",
@@ -39,8 +39,9 @@ let lIdTitle_voa = [
 "LPMVVzoVnP0|Lesson 37: What country are you from?",
 "Rlb3mhN5dCU|Lesson 38: How can you help the environment",
 "vAoVf2rIJFc|Lesson 39: Where are the dinosaurs?",
-"P5v-ZDjGQ5o|Lesson 40: What job do you want in the future?",
+"P5v-ZDjGQ5o|Lesson 40: What job do you want in the future?"];
 
+let lIdTitle_voaL1 = [
 "M8kGGThGdJE|Introducing Let's Learn English 1",
 "WR9_nsLyaEY|Lesson 1 - Welcome!",
 "1-U7o9xjWQc|Lesson 2: Hello, I'm Anna!",
@@ -56,7 +57,7 @@ let lIdTitle_voa = [
 "cyRaZA9ZD08|Lesson 12: Meet My Family",
 "jkutq1P7AHU|Lesson 13: Happy Birthday, William Shakespeare!",
 "4Xn1Ysdmuvg|Lesson 14: How About This?",
-"c6_7RYaNgdA|Learn English Lesson 15: I Love People-Watching!",
+"c6_7RYaNgdA|Lesson 15: I Love People-Watching!",
 "QQavoMYmMVE|Lesson 16: Where Are You From?",
 "91sCUUVTDV8|Lesson 17: Are You Free on Friday?",
 "he12VfXp5Ec|Lesson 18: She Always Does That",
@@ -71,8 +72,8 @@ let lIdTitle_voa = [
 "d_4TVWhqX4E|Lesson 27: I Can't Come",
 "rn7kmGroxKs|Lesson 28: I Passed It!",
 "_demyJmMyCo|Lesson 29: A Long Time Ago",
-"xfMnWypEufs|Lesson 31 Take Me Out to the Ball Game",
 "GnQEE0gEir0|Lesson 30: Rolling on the River",
+"xfMnWypEufs|Lesson 31 Take Me Out to the Ball Game",
 "1egFRwUFc48|Lesson 32: Welcome to the Treehouse!",
 "GpiXMzf3FvY|Lesson 33: Learning America's Sport",
 "qIiGG0pwzwk|Lesson 34: What Will I Do?",
@@ -117,7 +118,9 @@ let lIdTitle_voa = [
 "rb7Bs70qpJ4|Lesson 47 Speaking Practice",
 "PwDJILthcjU|Lesson 22 Pronunciation Practice",
 "m2VnyoZIlM4|Lesson 52 Pronunciation Practice",
-"vJPvOYb1K10|Lesson 52: Taking Chances",
+"vJPvOYb1K10|Lesson 52: Taking Chances"];
+
+let lIdTitle_voaL2 = [
 "mnmGvdVcQ-0|Introducing Let's Learn English Level 2",
 "a7X5ftOnp74|Lesson 3: He Said - She Said",
 "OR0d7fb_Ls0|Lesson 4: Run Away With the Circus!",
@@ -168,53 +171,25 @@ let lIdTitle_voa = [
 // <select id="select_voa">
     //<option>Lesson 40: What job do you want in the future?</option>
 // </select>
-function duaVaoMenuSelect() {
-    for (let i = 0; i < lIdTitle_voa.length; i++) {
-        let optn = lIdTitle_voa[i].split("|")[1];
+function updateMenuV(levelx) {
+    for (i = selectvoa.options.length-1; i >= 0;i--) {
+        selectvoa.remove(i);
+    }
+
+    let listx;
+    if (levelx===0){
+        listx=lIdTitle_voaAn;
+    }else if(levelx===1){
+        listx=lIdTitle_voaL1;
+    }else{
+        listx=lIdTitle_voaL2;
+    }
+    for (let i = 0; i < listx.length; i++) {
+        let optn = listx[i].split("|")[1];
         let el = document.createElement("option");
         el.textContent = optn;
         el.value = optn;
-        select_voa.appendChild(el);
+        selectvoa.appendChild(el);
     }
 }
-duaVaoMenuSelect();
-//---------------------------
-function  updateMenuV(levelv){
-    let select_voa = document.getElementById("select_voa");
-    let nstart,nend;
-    if (levelv===3){
-        nstart=118; nend=lIdTitle_voa.length;
-    } else if (levelv===2) {
-        nstart=41; nend=118;
-    } else{
-        nstart=0; nend=41;
-    }
-    //console.log(levelv, nstart, nend);    
-    for (let i = 0; i < select_voa.options.length; i++) {
-        select_voa.options[i].hidden = !(i>=nstart && i < nend); // che di nhung i khong trong khoang nay
-    }
-    if (select_voa.selecttedIndex < nstart || select_voa.selecttedIndex >= nend){
-        select_voa.selecttedIndex = nstart;
-
-    }
-}
-
-function  updateMenuT(levelt){
-   // console.log(levelt);
-    let nstart,nend;
-    if (level===3){
-        nstart=49; nend=unit_chon.options.length;
-    } else if (levelt===2) {
-        nstart=25; nend=49;
-    } else{
-        nstart=1; nend=25;
-    }
-    //console.log(levelt, nstart, nend);    
-    for (let i = 0; i < unit_chon.options.length; i++) {
-        unit_chon.options[i].hidden = !(i>=nstart && i < nend); // che di nhung i khong trong khoang nay
-    }
-    if (unit_chon.selecttedIndex < nstart || unit_chon.selecttedIndex >= nend){
-        unit_chon.selecttedIndex = nstart;
-
-    }
-}
+updateMenuV(0);
