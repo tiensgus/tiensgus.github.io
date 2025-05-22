@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Khai báo là web app -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Biểu tượng khi ghim ra màn hình chính (tùy chọn) -->
+    <link rel="apple-touch-icon" href="icon.png">
     <title>Tiensg89 Learn Tictac For Listening</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Import SweetAlert2 -->
@@ -349,9 +355,11 @@ function chonUnit(){ //chon unit khac va update iframe
         }
         
         //videoIDcurrent = list_id[selectb.selectedIndex];
-        videoIDcurrent = listy[selectb.selectedIndex].split("|")[0];
+        //videoIDcurrent = listy[selectb.selectedIndex].split("|")[0];
         //alert(videoIDcurrent); src embed co dang do yt quy dinh : "https://youtube.com/embed/"+id_yt
-        iframe_ytEl.src="https://youtube.com/embed/" + videoIDcurrent ;
+        let play="?playlist="; let laplai = "&loop=1"; let id_yt = "P9xxJsq1hUY";
+        iframe_ytEl.src="https://youtube.com/embed/" + play + id_yt + laplai;
+        //"P9xxJsq1hUY" + "&loop=1"; &autoplay=1&mute=1, ?playlist=
 
     }
 }
