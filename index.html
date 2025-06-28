@@ -153,7 +153,20 @@ width:114px;
 color:whitesmoke;
 
 }
+#buttonD{
+color:whitesmoke;
+background: linear-gradient(to bottom, #0dc313 0%, #80cd84 100%); /* Màu gradient 3D */
+border: none;
+border-radius: 8px;
+cursor: pointer;
+box-shadow: 0px 5px 0px #1B5E20; /* Đổ bóng để tạo hiệu ứng nổi */
+transition: all 0.2s ease-in-out;
 
+}
+select {
+  text-align: center;        /* Căn giữa text */
+  text-align-last: center;   /* Căn giữa option được chọn */
+}
 #buttonQ,#buttonH{
 background: linear-gradient(to bottom, #4CAF50 0%, #2E7D32 100%); /* Màu gradient 3D */
 font-size: 14px;
@@ -210,7 +223,9 @@ border-left: 4px solid #ffc107;
 padding: 12px;
 border-radius: 4px;
 }
-
+div {
+  border-radius: 12px;        /* Bo tròn 4 góc */
+}
 </style>
 </head>
 <body>
@@ -286,6 +301,9 @@ border-radius: 4px;
     <div class="buttons4">
         <button id="buttonH"><select id="select_voa" onchange="chonUnitVoa()" style="background-color: transparent; border: none; color:rgb(105, 27, 27);font-weight:bolder;"></select></button>
     </div>
+    <br>
+    <button id="buttonD"><select id="select_driver" onchange="chonUnitDriver()" style="background-color: transparent; border: none; color:rgb(105, 27, 27);font-weight:bolder;"></select></button>
+
     <br><br><br><br><br>
 </div>
 
@@ -304,6 +322,8 @@ var level = 1;
 var videoIDcurrent, videoIDcurrentVoa, listx, listy;
 const selectb = document.getElementById("unit_chon");
 const selectvoa = document.getElementById("select_voa");
+//const selectdriver = document.getElementById("select_driver");
+
     //nen la id luu last
 //document.getElementById("iframe_yt").src="https://youtube.com/embed/" + videoIDcurrent;
 //cai nay default Basic PDF
@@ -370,6 +390,7 @@ function hthipdf1(){
     iframe_ytEl.src = "https://online.flipbuilder.com/sdtta/fpva/mobile/index.html";
     updateMenuT(0);
     updateMenuV(0);
+
     document.getElementById("developingpdf").disabled = false;
     document.getElementById("expandingpdf").disabled = false;
     document.getElementById("wordLength").disabled = true;
@@ -383,6 +404,7 @@ function hthipdf2(){
     iframe_ytEl.src = "https://online.flipbuilder.com/sdtta/kjol";
     updateMenuT(1);
     updateMenuV(1);
+
     document.getElementById("wordLength").disabled = false;
     document.getElementById("expandingpdf").disabled = false;
     document.getElementById("developingpdf").disabled = true;
@@ -396,6 +418,7 @@ function hthipdf3(){
     iframe_ytEl.src = "https://online.flipbuilder.com/sdtta/vlyh";
     updateMenuT(2);
     updateMenuV(2);
+
     document.getElementById("wordLength").disabled = false;
     document.getElementById("developingpdf").disabled = false;
     document.getElementById("expandingpdf").disabled = true;
@@ -512,11 +535,21 @@ function speakText(text) {
 
 //Het them 3-5-25
 var videoIDcurrentvoa;
-  const select_voa = document.getElementById("select_voa");
+  //const select_voa = document.getElementById("select_voa");
   function chonUnitvoa(){ //chon unit khac va update iframe
     videoIDcurrentvoa = lIdTitle_voa[select_voa.selectedIndex].split("|")[0];
     iframe_ytEl.src="https://youtube.com/embed/" + videoIDcurrentvoa;
   }
+
+//Them 28-6-25
+//var videoIDcurrentdriver;
+  //const select_driver = document.getElementById("select_driver");
+//  function chonUnitdriver(){ //chon unit khac va update iframe
+//    videoIDcurrentdriver = lIdTitle_driver[select_driver.selectedIndex].split("|")[0];
+//    iframe_ytEl.src="https://youtube.com/embed/" + videoIDcurrentdriver;
+//  }
+
+
 //link yt basic  DKF  https://youtube.com/playlist?list=PLhow8vRduAKyaJ8_5-jBR4PV3is3tSpYz&si=LfPbgHbHBLY5eMfN
 //link yt develop DKF https://www.youtube.com/playlist?list=PLhow8vRduAKwxvROzq8ZMj1fUqsXuFN2E
 //link yt expand  DKF https://youtube.com/playlist?list=PLhow8vRduAKwIIZ0yzh5kl1C1DxzPxxYZ&si=rxpoDMbkKBF_8_99
