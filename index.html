@@ -373,12 +373,16 @@ function chonUnit(){ //chon unit khac va update iframe
             selectb.selectedIndex=0;
             return;
         }
-        
+        //videoIDcurrent = list_id[selectb.selectedIndex];
+        videoIDcurrent = listy[selectb.selectedIndex].split("|")[0];
+        //alert(videoIDcurrent); src embed co dang do yt quy dinh : "https://youtube.com/embed/"+id_yt
+        iframe_ytEl.src="https://youtube.com/embed/" + videoIDcurrent ;
+
         //videoIDcurrent = list_id[selectb.selectedIndex];
         //videoIDcurrent = listy[selectb.selectedIndex].split("|")[0];
         //alert(videoIDcurrent); src embed co dang do yt quy dinh : "https://youtube.com/embed/"+id_yt
-        let play="?playlist="; let laplai = "&loop=1"; let id_yt = "P9xxJsq1hUY";
-        iframe_ytEl.src="https://youtube.com/embed/" + play + id_yt + laplai;
+        //let play="?playlist="; let laplai = "&loop=1"; let id_yt = "P9xxJsq1hUY";
+        //iframe_ytEl.src="https://youtube.com/embed/" + play + id_yt + laplai;
         //"P9xxJsq1hUY" + "&loop=1"; &autoplay=1&mute=1, ?playlist=
 
     }
