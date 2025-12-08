@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Khai báo là web app -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--<meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- Biểu tượng khi ghim ra màn hình chính (tùy chọn) -->
-    <link rel="apple-touch-icon" href="icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+    <!-- Biểu tượng khi ghim ra màn hình chính (tùy chọn) 
+    <link rel="apple-touch-icon" href="icon.png">-->
     <title>Tiensg89 Learn Tictac For Listening</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Import SweetAlert2 -->
@@ -19,20 +19,38 @@
 
     <!--<link rel="stylesheet" href="index.css">-->
 <style>
-html, body {
-overflow-x: hidden; /* Chặn cuộn ngang */
-width: 100vw; /* Đảm bảo không vượt quá chiều rộng thiết bị */
-max-width: 100%; /* Tránh nội dung tràn ra ngoài */
+
+/*html, body {
+overflow-x: hidden; 
+width: 100vw; 
+max-width: 100%; 
 margin: 0;
 padding: 0;
-touch-action: manipulation; /* Ngăn chặn thao tác vuốt không mong muốn */
+touch-action: manipulation; 
 }
 
 body {
     background-image: linear-gradient(-45deg, #f4d03f, #160223); 
     color: #fff;
     font: 1rem/1 'Poppins', sans-serif;
+}*/
+
+html,body {
+    background-image: linear-gradient(-45deg, #f4d03f, #160223); 
+    color: #fff;
+    font: 1rem/1 'Poppins', sans-serif;
+    height:100%;
+    padding:0px;
+    /*max-width: 700px;*/ 
+    margin: auto;
 }
+body{
+/*min-height: 100vh;*/
+display: flex;
+flex-direction: column;
+padding-bottom: env(safe-area-inset-bottom);
+}
+
 /*
 .video-wrapper {
     width: 320px;
